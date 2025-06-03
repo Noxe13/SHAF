@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ШАФ | Город на СПМ</title>
+   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="ico.ico">
+</head>
+<body>
+    <div class="header-spacer"></div>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <header id="main-header">
+    <div class="logo">ШАФ</div>
+    <nav>
+        <ul id="nav-menu">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#attractions">Правительство</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#contact">Соц. Сети</a></li>
+                </ul>
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</header>
+        
+        <main>
+            <section class="hero" id="home" data-scroll="fadeIn">
+                <h1 data-scroll="fadeIn" data-scroll-delay="100">ШАФ</h1>
+                <p class="subtitle" data-scroll="fadeIn" data-scroll-delay="200">Средневековый китайский город, где традиции встречаются с современностью. Погрузитесь в атмосферу восточной мудрости и гармонии.</p>
+                
+                <div class="btn-group" data-scroll="fadeIn" data-scroll-delay="300">
+                    <a href="https://spworlds.ru/spm/wallet" class="btn btn-primary" id="donate-btn">
+                        <i class="fas fa-hand-holding-heart"></i> Спонсировать (91551)
+                    </a>
+                </div>
+                
+                <div class="branch-info" data-scroll="fadeIn" data-scroll-delay="400">
+                    <i class="fas fa-subway"></i> <span id="branch-number">Желтая Ветка: 2104</span>
+                </div>
+            </section>
+			
+            <section class="gallery-section" id="attractions" data-scroll="fadeIn">
+    <h2 class="section-title" data-scroll="fadeIn" data-scroll-delay="100">Правительство</h2>
+    <div class="creators-wrapper" id="attractions-gallery"></div>
+</section>
+
+            <section class="gallery-section" id="gallery" data-scroll="fadeIn">
+                <h2 class="section-title" data-scroll="fadeIn" data-scroll-delay="100">Галерея города</h2>
+                <div class="gallery" id="image-gallery"></div>
+            </section>
+
+            <section class="weather-section" id="weather" data-scroll="fadeIn">
+                <div class="weather-card" data-scroll="scaleIn" data-scroll-delay="100">
+                    <h3>Погода в ШАФ</h3>
+                    <div class="weather-info">
+                        <div class="weather-icon"><i class="fas fa-sun"></i></div>
+                        <div class="weather-details">
+                            <span class="temperature">+24°C</span>
+                            <span class="conditions">Ясно</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer id="contact" data-scroll="fadeIn">
+            <div class="social-links">
+                <a href="D:\! Projects\САЙТ ШАФ\404.html" data-scroll="fadeIn" data-scroll-delay="200"><i class="fab fa-telegram"></i></a>
+                <a href="https://discord.gg/jRJaQ9fuku" data-scroll="fadeIn" data-scroll-delay="300"><i class="fab fa-discord"></i></a>
+                <a href="D:\! Projects\САЙТ ШАФ\404.html" data-scroll="fadeIn" data-scroll-delay="400"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright">© <span id="current-year"></span> ШАФ. Все <a href="https://www.youtube.com/watch?v=zizswHJCL_o&ab_channel=%D0%94%D0%B5%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9%D1%83%D1%82%D0%BA%D0%BE%D0%BD%D0%BE%D1%81"; color: white;>права</a> защищены.</p>
+            <button id="back-to-top" class="back-to-top-btn">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </footer>
+    </div>
+
+    <div class="modal" id="image-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&nbsp;</span>
+            <img class="modal-image" id="modal-image" src="" alt="">
+            <h3 class="modal-title" id="modal-title"></h3>
+            <p class="modal-description" id="modal-description"></p>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+	<script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
