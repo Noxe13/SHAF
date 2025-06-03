@@ -118,11 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Погода
     const updateWeather = () => {
         const weatherConditions = [
-            { icon: 'sun', temp: '+24°C', text: 'Солнечно' }
-            // { icon: 'cloud-sun', temp: '+20°C', text: 'Переменная облачность' },
-            // { icon: 'cloud', temp: '+18°C', text: 'Облачно' },
-            // { icon: 'cloud-rain', temp: '+16°C', text: 'Дождь' }
-        ];
+    { icon: 'sun', temp: '+24°C', text: 'Солнечно' },
+    { icon: 'cloud-sun', temp: '+20°C', text: 'Переменная облачность' },
+    { icon: 'cloud', temp: '+18°C', text: 'Облачно' },
+    { icon: 'cloud-rain', temp: '+16°C', text: 'Дождь' }
+];
         
         const randomWeather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
         const weatherIcon = document.querySelector('.weather-icon i');
