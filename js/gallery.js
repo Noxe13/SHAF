@@ -2,7 +2,7 @@ const attractionsData = [
     {
         image: 'images/shafki/mops13.jpg',
         title: 'Lord_Of_Mops13',
-        description: 'Запасная ШАФ-ка, создатель этого сайта. ЖОПА'
+        description: 'Запасная ШАФ-ка, создатель этого сайта, тестировщик. (Я ЕБАЛ ЭТОТ САЙТ СУКА НИХУЯ НЕ РАБОТАЕТ)'
     },
     {
         image: 'images/shafki/twwentytwo.jpg',
