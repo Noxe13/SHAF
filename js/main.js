@@ -124,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
     { icon: 'cloud-rain', temp: '+16°C', text: 'Дождь' }
 ];
         
-        const randomWeather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+        const randomIndex = Math.floor(Math.random() * 100) % weatherConditions.length;
+const randomWeather = weatherConditions[randomIndex];
         const weatherIcon = document.querySelector('.weather-icon i');
         const temperature = document.querySelector('.temperature');
         const conditions = document.querySelector('.conditions');
