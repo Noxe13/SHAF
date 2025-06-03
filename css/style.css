@@ -93,7 +93,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 7%;
     background-color: rgba(18, 18, 18, 0.637);
     z-index: 1000;
     padding: 1rem 0;
@@ -112,10 +112,6 @@ header {
     font-weight: 700;
     animation: textGlow 4s infinite alternate;
     margin-left: 2rem;
-}
-
-.mobile-logo {
-    display: none;
 }
 
 @keyframes textGlow {
@@ -615,109 +611,8 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Анимации при скролле */
-[data-scroll] {
-    opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-[data-scroll="fadeIn"] {
-    transform: translateY(30px);
-}
-
-[data-scroll="fadeInLeft"] {
-    transform: translateX(-30px);
-}
-
-[data-scroll="fadeInRight"] {
-    transform: translateX(30px);
-}
-
-[data-scroll="scaleIn"] {
-    transform: scale(0.95);
-}
-
-[data-scroll].animated {
-    opacity: 1;
-    transform: translateY(0) translateX(0) scale(1);
-}
-
-/* Частицы */
-.particle {
-    position: absolute;
-    background-color: var(--primary);
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: floatParticle linear infinite;
-}
-
-@keyframes floatParticle {
-    0% {
-        transform: translateY(0) translateX(0);
-    }
-    50% {
-        transform: translateY(-100px) translateX(20px);
-    }
-    100% {
-        transform: translateY(-200px) translateX(0);
-    }
-}
-
-/* Галерея аттракционов */
-#attractions-gallery {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-#attractions-gallery .gallery-item {
-    width: 250px;
-    height: auto;
-    flex: 0 0 auto;
-    opacity: 1;
-    transform: none;
-    animation: none;
-    box-shadow: none;
-}
-
-.attractions-wrapper .gallery-item {
-    width: 250px;
-    height: auto;
-    opacity: 1;
-    transform: none;
-    animation: none;
-}
-
-/* Секция создателей */
-.creators-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 3rem auto;
-    flex-wrap: nowrap;
-    max-width: 1000px;
-}
-
-.creators-wrapper .gallery-item {
-    width: 250px;
-    height: auto;
-    flex: none;
-    opacity: 1;
-    transform: none;
-    animation: none;
-}
-
 /* Адаптивность */
-@media (max-width: 1200px) {
-    .container {
-        padding: 1.5rem;
-    }
-    
+@media (max-width: 992px) {
     h1 {
         font-size: 4rem;
     }
@@ -727,60 +622,24 @@ footer {
     }
 }
 
-@media (max-width: 992px) {
-    h1 {
-        font-size: 3.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1.3rem;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-    }
-    
-    #attractions-gallery .gallery-item {
-        flex: 0 0 calc(50% - 2rem);
-    }
-}
-
 @media (max-width: 768px) {
-    body {
-        padding-top: 60px;
-        background-attachment: fixed;
-    }
-
-    .container {
-        padding: 1rem;
-    }
-
-    /* Хедер для мобильных */
+    /* Скрываем хедер и логотип */
     #main-header {
-        height: 60px;
-        background: rgba(18, 18, 18, 0.9) !important;
-        padding: 0.5rem 0 !important;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+        height: 0;
+        position: relative;
+		height: 10vh;
     }
 
     .logo {
         display: none;
     }
 
-    .mobile-logo {
-        display: block;
-        font-family: 'Alumni Sans SC', sans-serif;
-        font-size: 1.8rem;
-        color: var(--primary);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Мобильное меню */
+    /* Стили для кнопки бургера */
     .mobile-menu-btn {
-        display: block;
+        display: block !important;
         position: fixed;
         left: 1rem;
         top: 1rem;
@@ -794,6 +653,7 @@ footer {
         transition: transform 0.3s ease;
     }
 
+    /* Анимация иконки бургера */
     .mobile-menu-btn i {
         display: inline-block;
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -803,14 +663,14 @@ footer {
         transform: rotate(90deg);
     }
 
+    /* Стили для мобильного меню */
     #nav-menu {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(12, 12, 12, 0.98);
-        backdrop-filter: blur(5px);
+        background: rgba(0, 0, 0, 0.95);
         display: none;
         flex-direction: column;
         justify-content: center;
@@ -841,9 +701,9 @@ footer {
     }
 
     #nav-menu a {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         color: var(--light);
-        padding: 0.8rem 2rem;
+        padding: 0.5rem 1.5rem;
         border-radius: 30px;
         transition: all 0.3s ease;
     }
@@ -853,118 +713,45 @@ footer {
         color: var(--dark);
     }
 
-    /* Герой-секция */
-    .hero {
-        padding: 2rem 0;
-    }
-
+    /* Адаптация других элементов */
     h1 {
-        font-size: 2.5rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        animation: none;
+        font-size: 3rem;
+        margin-top: 4rem;
     }
 
     .subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         padding: 0 1rem;
-        animation: none;
-        opacity: 1;
     }
 
-    /* Кнопки */
     .btn-group {
         flex-direction: column;
         width: 100%;
         padding: 0 1rem;
-        gap: 1rem;
-        animation: none;
-        opacity: 1;
     }
 
     .btn {
         width: 100%;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+        justify-content: center;
     }
 
-    /* Галерея */
     .gallery {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
-    .gallery-item {
-        height: 250px;
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
-
-    /* Секции */
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Погода */
     .weather-card {
         width: 100%;
         margin: 1rem 0;
-    }
-
-    /* Футер */
-    footer {
-        padding: 1.5rem 0;
-    }
-
-    .social-links {
-        gap: 1rem;
-    }
-
-    .social-links a {
-        font-size: 1.3rem;
-    }
-
-    /* Аттракционы */
-    #attractions-gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #attractions-gallery .gallery-item {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    /* Создатели */
-    .creators-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .creators-wrapper .gallery-item {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    /* Кнопка "наверх" */
-    .back-to-top-btn {
-        width: 45px;
-        height: 45px;
-        right: 15px;
-        bottom: 15px;
-        font-size: 1rem;
     }
 }
 
 @media (max-width: 576px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .section-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .gallery {
@@ -982,41 +769,132 @@ footer {
         height: 40px;
         font-size: 1rem;
     }
+
+[data-scroll] {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.8rem;
+[data-scroll="fadeIn"] {
+    transform: translateY(30px);
+}
+
+[data-scroll="fadeInLeft"] {
+    transform: translateX(-30px);
+}
+
+[data-scroll="fadeInRight"] {
+    transform: translateX(30px);
+}
+
+[data-scroll="scaleIn"] {
+    transform: scale(0.95);
+}
+
+[data-scroll].animated {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+.particle {
+    position: absolute;
+    background-color: var(--primary);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-100px) translateX(20px);
+    }
+    100% {
+        transform: translateY(-200px) translateX(0);
+    }
     }
 
-    .subtitle {
-        font-size: 1rem;
-    }
+.gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+}
 
-    .section-title {
-        font-size: 1.6rem;
-    }
-
-    .mobile-menu-btn {
-        font-size: 1.5rem;
-        top: 0.8rem;
-        left: 0.8rem;
-    }
-
-    .mobile-logo {
-        font-size: 1.5rem;
-        top: 12px;
-    }
-
-    .gallery-item {
-        height: 200px;
+@media (max-width: 992px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
-/* Оптимизация анимаций для устройств с prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }	
+}
+#attractions-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    margin-top: 3rem;
+}
+
+#attractions-gallery {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+    flex-wrap: nowrap !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+}
+
+#attractions-gallery .gallery-item {
+    width: 250px !important;
+    height: auto !important;
+    flex: 0 0 auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+}
+
+.attractions-wrapper .gallery-item {
+    width: 250px;
+    height: auto;
+    opacity: 1;
+    transform: none;
+    animation: none;
+}
+
+@media (max-width: 992px) {
+    #attractions-gallery .gallery-item {
+        flex: 0 0 calc(50% - 2rem);
     }
+}
+
+@media (max-width: 576px) {
+    #attractions-gallery .gallery-item {
+        flex: 0 0 100%;
+    }
+}
+.creators-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    flex-wrap: nowrap;
+    max-width: 1000px;
+}
+
+.creators-wrapper .gallery-item {
+    width: 250px;
+    height: auto;
+    flex: none;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+}
+
 }
