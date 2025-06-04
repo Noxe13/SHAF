@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const weatherConditions = [
             { icon: 'sun', temp: '+24°C', text: 'Ясно' },
             { icon: 'cloud-sun', temp: '+20°C', text: 'Переменная облачность' },
-            { icon: 'cloud', temp: '+18°C', text: 'Облачно' },
-            { icon: 'cloud-rain', temp: '+16°C', text: 'Дождь' }
+            { icon: 'sun', temp: '+18°C', text: 'Ясно' },
+            { icon: 'sun', temp: '+19°C', text: 'Ясно' }
         ];
         
         const randomWeather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
