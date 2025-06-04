@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             image: 'images/gallery/image2.jpg',
             title: 'Хайпер-Лупа',
-            description: 'Именно с него, вы сможете попасть в наш город.'
+            description: 'Именно с него, вы сможете попасть в наш город. (да у нас хайперлупа красивее портала)'
         },
         {
             image: 'images/gallery/image3.jpg',
