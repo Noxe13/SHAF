@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (donateBtn) {
         donateBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            showNotification('Спасибо за поддержку города ШАФ!');
+            showNotification('Происхoдит переадресация на сайт SPM!');
             setTimeout(() => {
                 window.location.href = this.href;
             }, 1500);
