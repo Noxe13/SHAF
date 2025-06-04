@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Установка текущего года
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
+    // Элементы меню
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const navItems = document.querySelectorAll('#nav-menu li');
+
     // Инициализация анимаций при скролле
     const initScrollAnimations = () => {
         const scrollElements = document.querySelectorAll('[data-scroll]');
@@ -24,63 +29,57 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', handleScrollAnimation);
     };
 
-    // Сброс позиции при обновлении
-    window.addEventListener('beforeunload', function() {
-        window.scrollTo(0, 0);
-    });
+    // Мобильное меню
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
 
-    // Кнопка "Наверх"
-    const backToTopBtn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function() {
-        backToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
-    });
-    
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    
-    // Добавляем индекс для анимации пунктов
-    navItems.forEach((item, index) => {
-        item.style.setProperty('--i', index);
-    });
-
-    mobileMenuBtn.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navMenu.classList.toggle('active');
-
-        if (navMenu.classList.contains('active')) {
-            navMenu.style.display = 'flex';
-            setTimeout(() => {
-                navMenu.style.opacity = '1';
-                navMenu.style.transform = 'translateX(0)';
-            }, 10);
-        } else {
-            navMenu.style.opacity = '0';
-            navMenu.style.transform = 'translateX(-100%)';
-            setTimeout(() => {
-                navMenu.style.display = 'none';
-            }, 300);
-        }
-    });
-
-    // Закрытие меню при клике на пункт
-    document.querySelectorAll('#nav-menu a').forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                mobileMenuBtn.classList.remove('active');
+            if (navMenu.classList.contains('active')) {
+                navMenu.style.display = 'flex';
+                setTimeout(() => {
+                    navMenu.style.opacity = '1';
+                    navMenu.style.transform = 'translateX(0)';
+                }, 10);
+            } else {
                 navMenu.style.opacity = '0';
                 navMenu.style.transform = 'translateX(-100%)';
                 setTimeout(() => {
-                    navMenu.classList.remove('active');
                     navMenu.style.display = 'none';
                 }, 300);
             }
         });
-    });
+
+        // Закрытие меню при клике на пункт
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    mobileMenuBtn.classList.remove('active');
+                    navMenu.style.opacity = '0';
+                    navMenu.style.transform = 'translateX(-100%)';
+                    setTimeout(() => {
+                        navMenu.classList.remove('active');
+                        navMenu.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    }
+
+    // Кнопка "Наверх"
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+            backToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Обработка кнопки спонсирования
     const donateBtn = document.getElementById('donate-btn');
@@ -103,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    const headerHeight = document.getElementById('main-header').offsetHeight;
+                    const headerHeight = document.getElementById('main-header')?.offsetHeight || 80;
                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                     
                     window.scrollTo({
@@ -147,29 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Частицы
-    const initParticles = () => {
-        const particlesContainer = document.getElementById('particles');
-        if (!particlesContainer) return;
-        
-        for (let i = 0; i < 30; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.cssText = `
-                width: ${Math.random() * 5 + 1}px;
-                height: ${Math.random() * 5 + 1}px;
-                left: ${Math.random() * 100}%;
-                top: ${Math.random() * 100}%;
-                animation-delay: ${Math.random() * 5}s;
-                animation-duration: ${Math.random() * 10 + 5}s;
-                opacity: ${Math.random() * 0.5 + 0.1};
-            `;
-            particlesContainer.appendChild(particle);
-        }
-    };
-
     // Инициализация
     initScrollAnimations();
     updateWeather();
-    initParticles();
 });
