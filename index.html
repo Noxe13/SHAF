@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ШАФ | Город на СПМ</title>
    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -17,16 +17,16 @@
     <div class="container">
         <header id="main-header">
     <div class="logo">ШАФ</div>
-    <button class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-    </button>
     <nav>
         <ul id="nav-menu">
-            <li><a href="#home">Главная</a></li>
-            <li><a href="#attractions">Правительство</a></li>
-            <li><a href="#gallery">Галерея</a></li>
-            <li><a href="#contact">Соц. Сети</a></li>
-        </ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#attractions">Правительство</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#contact">Соц. Сети</a></li>
+                </ul>
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
     </nav>
 </header>
         
@@ -69,11 +69,12 @@
                 </div>
             </section>
         </main>
-         <footer id="contact" data-scroll="fadeIn">
+        
+        <footer id="contact" data-scroll="fadeIn">
             <div class="social-links">
-                <a href="https://noxe13.github.io/SHAF/404" data-scroll="fadeIn" data-scroll-delay="200"><i class="fab fa-telegram"></i></a>
+                <a href="D:\! Projects\САЙТ ШАФ\404.html" data-scroll="fadeIn" data-scroll-delay="200"><i class="fab fa-telegram"></i></a>
                 <a href="https://discord.gg/jRJaQ9fuku" data-scroll="fadeIn" data-scroll-delay="300"><i class="fab fa-discord"></i></a>
-                <a href="#" data-scroll="fadeIn" data-scroll-delay="400"><i class="fab fa-tiktok"></i></a>
+                <a href="D:\! Projects\САЙТ ШАФ\404.html" data-scroll="fadeIn" data-scroll-delay="400"><i class="fab fa-youtube"></i></a>
             </div>
             <p class="copyright">© <span id="current-year"></span> ШАФ. Все <a href="https://www.youtube.com/watch?v=zizswHJCL_o&ab_channel=%D0%94%D0%B5%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9%D1%83%D1%82%D0%BA%D0%BE%D0%BD%D0%BE%D1%81"; color: white;>права</a> защищены.</p>
             <button id="back-to-top" class="back-to-top-btn">
@@ -81,6 +82,7 @@
             </button>
         </footer>
     </div>
+
     <div class="modal" id="image-modal">
         <div class="modal-content">
             <span class="close-modal" id="close-modal">&nbsp;</span>
