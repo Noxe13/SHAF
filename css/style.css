@@ -21,17 +21,22 @@
 }
 
 html {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
 }
 
 body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
     background: url('../images/background.jpg') no-repeat center center;
     background-size: cover;
     color: var(--light);
     position: relative;
-    overflow-x: hidden;
     line-height: 1.6;
     padding-top: 80px;
     animation: fadeIn 2s ease-out;
