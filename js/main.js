@@ -133,19 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (conditions) conditions.textContent = randomWeather.text;
     };
 
-    // Уведомления
-    const showNotification = (message) => {
-        const notification = document.getElementById('notification');
-        if (notification) {
-            notification.textContent = message;
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-    };
-
     // Инициализация
     initScrollAnimations();
     updateWeather();
