@@ -673,8 +673,9 @@ footer {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    margin: 3rem auto;
     flex-wrap: nowrap;
-    margin-top: 3rem;
+    max-width: 1000px;
 }
 
 #attractions-gallery {
@@ -701,9 +702,10 @@ footer {
 .attractions-wrapper .gallery-item {
     width: 250px;
     height: auto;
-    opacity: 1;
-    transform: none;
-    animation: none;
+    flex: none;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
 }
 
 /* Секция создателей */
