@@ -2,7 +2,7 @@ const attractionsData = [
     {
         image: 'images/shafki/mops13.jpg',
         title: 'Lord_Of_Mops13',
-        description: 'Запасная ШАФ-ка, создатель этого сайта, тестировщик. (Я ЕБАЛ ЭТОТ САЙТ СУКА НИХУЯ НЕ РАБОТАЕТ)'
+        description: 'Запасная ШАФ-ка, создатель этого сайта, тестировщик.'
     },
     {
         image: 'images/shafki/twwentytwo.jpg',
@@ -13,8 +13,7 @@ const attractionsData = [
         image: 'images/shafki/weischne.jpg',
         title: 'weischne',
         description: 'Запасная ШАФ-ка, самый лучший архитектор в мире, щовэл.'
-    },
-  
+    }
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -39,24 +38,23 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Залупа2',
             description: 'нахуй ты это читаешь'
         }
-		
     ];
-	const attractionsContainer = document.getElementById('attractions-gallery');
+    
+    const attractionsContainer = document.getElementById('attractions-gallery');
     const galleryContainer = document.getElementById('image-gallery');
     const modal = document.getElementById('image-modal');
     const modalImage = document.getElementById('modal-image');
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
+    const closeModal = document.getElementById('close-modal');
 
-    // Создаем элементы галереи
-    galleryData.forEach((item, index) => {
+    // Функция для создания элементов галереи
+    function createGalleryItem(item, container) {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
-        galleryItem.setAttribute('data-scroll', index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight');
-        galleryItem.setAttribute('data-scroll-delay', 100 + (index * 100));
         
         galleryItem.innerHTML = `
-            <img src="${item.image}" alt="${item.title}">
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
             <div class="gallery-item-overlay">
                 <h3>${item.title}</h3>
                 <p>${item.description}</p>
@@ -72,35 +70,18 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'hidden';
         });
         
-        galleryContainer.appendChild(galleryItem);
-    });
-	
-	attractionsData.forEach((item, index) => {
-    const galleryItem = document.createElement('div');
-    galleryItem.className = 'gallery-item';
-    galleryItem.setAttribute('data-scroll', index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight');
-    galleryItem.setAttribute('data-scroll-delay', 100 + (index * 100));
-    
-    galleryItem.innerHTML = `
-        <img src="${item.image}" alt="${item.title}">
-        <div class="gallery-item-overlay">
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-        </div>
-    `;
-    
-    galleryItem.addEventListener('click', () => {
-        modalImage.src = item.image;
-        modalImage.alt = item.title;
-        modalTitle.textContent = item.title;
-        modalDescription.textContent = item.description;
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    });
-    
-    attractionsContainer.appendChild(galleryItem);
-});
+        container.appendChild(galleryItem);
+    }
 
+    // Создаем элементы галереи
+    galleryData.forEach(item => createGalleryItem(item, galleryContainer));
+    attractionsData.forEach(item => createGalleryItem(item, attractionsContainer));
+
+    // Закрытие модального окна
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
 
     // Закрытие по клику вне изображения
     modal.addEventListener('click', (e) => {
