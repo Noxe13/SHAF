@@ -47,6 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const closeModal = document.getElementById('close-modal');
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+
+    // Объединяем все данные галерей в один массив
+    const allGalleryItems = [...galleryData, ...attractionsData];
+    let currentIndex = 0;
 
     // Функция для создания элементов галереи
     function createGalleryItem(item, container) {
@@ -62,16 +68,43 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         galleryItem.addEventListener('click', () => {
-            modalImage.src = item.image;
-            modalImage.alt = item.title;
-            modalTitle.textContent = item.title;
-            modalDescription.textContent = item.description;
+            currentIndex = allGalleryItems.findIndex(i => i.image === item.image);
+            updateModal(currentIndex);
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         });
         
         container.appendChild(galleryItem);
     }
+
+    // Обновление модального окна
+    function updateModal(index) {
+        const item = allGalleryItems[index];
+        modalImage.src = item.image;
+        modalImage.alt = item.title;
+        modalTitle.textContent = item.title;
+        modalDescription.textContent = item.description;
+        currentIndex = index;
+        
+        // Показываем/скрываем кнопки в зависимости от позиции
+        prevButton.style.display = index === 0 ? 'none' : 'block';
+        nextButton.style.display = index === allGalleryItems.length - 1 ? 'none' : 'block';
+    }
+
+    // Навигация по галерее
+    prevButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentIndex > 0) {
+            updateModal(currentIndex - 1);
+        }
+    });
+
+    nextButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentIndex < allGalleryItems.length - 1) {
+            updateModal(currentIndex + 1);
+        }
+    });
 
     // Создаем элементы галереи
     galleryData.forEach(item => createGalleryItem(item, galleryContainer));
@@ -88,6 +121,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Обработка клавиатуры
+    document.addEventListener('keydown', (e) => {
+        if (modal.style.display === 'flex') {
+            if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                updateModal(currentIndex - 1);
+            } else if (e.key === 'ArrowRight' && currentIndex < allGalleryItems.length - 1) {
+                updateModal(currentIndex + 1);
+            } else if (e.key === 'Escape') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
     });
 });
