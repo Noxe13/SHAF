@@ -834,41 +834,47 @@ footer {
     }	
 }
 
-#attractions-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    margin-top: 3rem;
-}
-
+/* Галерея attractions */
 #attractions-gallery {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
     gap: 2rem !important;
     flex-wrap: nowrap !important;
-    max-width: 1000px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 1rem 0 !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--primary) rgba(0,0,0,0.1) !important;
+    width: 100% !important;
     margin: 0 auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+#attractions-gallery::-webkit-scrollbar {
+    height: 6px !important;
+}
+
+#attractions-gallery::-webkit-scrollbar-thumb {
+    background-color: var(--primary) !important;
+    border-radius: 3px !important;
 }
 
 #attractions-gallery .gallery-item {
-    width: 250px !important;
-    height: auto !important;
+    width: 280px !important;
+    height: 380px !important;
     flex: 0 0 auto !important;
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
-    box-shadow: none !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+    margin: 0 !important;
+    transition: transform 0.3s ease !important;
 }
 
-.attractions-wrapper .gallery-item {
-    width: 250px;
-    height: auto;
-    opacity: 1;
-    transform: none;
-    animation: none;
+#attractions-gallery .gallery-item:hover {
+    transform: translateY(-5px) scale(1.02) !important;
 }
 
 @media (max-width: 992px) {
