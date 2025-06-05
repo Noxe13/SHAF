@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'Именно с него, вы сможете попасть в наш город. (да у нас хайперлупа красивее портала)'
         },
         {
-            image: 'images/gallery/image3.jpg',
-            title: 'Хуйня1',
-            description: 'у нас больше нету построек сарян'
+            image: 'images/gallery/none.jpg',
+            title: '',
+            description: ''
         },
         {
-            image: 'images/gallery/image4.jpg',
-            title: 'Залупа2',
-            description: 'нахуй ты это читаешь'
+            image: 'images/gallery/none.jpg',
+            title: '',
+            description: ''
         }
     ];
     
