@@ -616,9 +616,8 @@ footer {
     #attractions-gallery .gallery-item {
         flex: 0 0 calc(50% - 2rem);
     }
-	h1 {
+    h1 {
         font-size: 4rem;
-	    
     }
     
     .gallery {
@@ -628,27 +627,27 @@ footer {
 
 @media (max-width: 768px) {
     /* Скрываем хедер и логотип */
- #attractions-gallery {
+    #attractions-gallery {
         display: grid !important;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
         flex-wrap: wrap !important;
         gap: 1rem !important;
     }
 
-#attractions-gallery .gallery-item {
+    #attractions-gallery .gallery-item {
         width: 100% !important;
         height: 250px !important;
         flex: 1 1 auto !important;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
     }
  
-#main-header {
+    #main-header {
         background: transparent;
         padding: 0;
         box-shadow: none;
         height: 0;
         position: relative;
-		height: 10vh;
+        height: 10vh;
     }
 
     .logo {
@@ -764,14 +763,13 @@ footer {
 }
 
 @media (max-width: 574px) {
- #attractions-gallery {
+    #attractions-gallery {
         grid-template-columns: 1fr !important;
     }
-#attractions-gallery .gallery-item {
+    #attractions-gallery .gallery-item {
         flex: 0 0 100% !important;
     }
-	
-	
+    
     h1 {
         font-size: 2.5rem;
     }
@@ -796,131 +794,319 @@ footer {
         font-size: 1rem;
     }
 
-[data-scroll] {
-    opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-[data-scroll="fadeIn"] {
-    transform: translateY(30px);
-}
-
-[data-scroll="fadeInLeft"] {
-    transform: translateX(-30px);
-}
-
-[data-scroll="fadeInRight"] {
-    transform: translateX(30px);
-}
-
-[data-scroll="scaleIn"] {
-    transform: scale(0.95);
-}
-
-[data-scroll].animated {
-    opacity: 1;
-    transform: translateY(0) translateX(0) scale(1);
-}
-.particle {
-    position: absolute;
-    background-color: var(--primary);
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: floatParticle linear infinite;
-}
-
-@keyframes floatParticle {
-    0% {
-        transform: translateY(0) translateX(0);
-    }
-    50% {
-        transform: translateY(-100px) translateX(20px);
-    }
-    100% {
-        transform: translateY(-200px) translateX(0);
-    }
+    [data-scroll] {
+        opacity: 0;
+        transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-.gallery {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-items: center;
-}
+    [data-scroll="fadeIn"] {
+        transform: translateY(30px);
+    }
 
-@media (max-width: 992px) {
+    [data-scroll="fadeInLeft"] {
+        transform: translateX(-30px);
+    }
+
+    [data-scroll="fadeInRight"] {
+        transform: translateX(30px);
+    }
+
+    [data-scroll="scaleIn"] {
+        transform: scale(0.95);
+    }
+
+    [data-scroll].animated {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    .particle {
+        position: absolute;
+        background-color: var(--primary);
+        border-radius: 50%;
+        opacity: 0.5;
+        animation: floatParticle linear infinite;
+    }
+
+    @keyframes floatParticle {
+        0% {
+            transform: translateY(0) translateX(0);
+        }
+        50% {
+            transform: translateY(-100px) translateX(20px);
+        }
+        100% {
+            transform: translateY(-200px) translateX(0);
+        }
+    }
+
     .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        justify-items: center;
+    }
+
+    @media (max-width: 992px) {
+        .gallery {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+    }
+
+    @media (max-width: 768px) {
+        .gallery {
+            grid-template-columns: 1fr;
+        }	
+    }
+    #attractions-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: nowrap;
+        margin-top: 3rem;
+    }
+
+    #attractions-gallery {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 2rem !important;
+        flex-wrap: nowrap !important;
+        max-width: 1000px !important;
+        margin: 0 auto !important;
+    }
+
+    #attractions-gallery .gallery-item {
+        width: 250px !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        box-shadow: none !important;
+    }
+
+    .attractions-wrapper .gallery-item {
+        width: 250px;
+        height: auto;
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    @media (max-width: 992px) {
+        #attractions-gallery .gallery-item {
+            flex: 0 0 calc(50% - 2rem);
+        }
+    }
+
+    @media (max-width: 576px) {
+        #attractions-gallery .gallery-item {
+            flex: 0 0 100%;
+        }
+    }
+    .creators-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem auto;
+        flex-wrap: nowrap;
+        max-width: 1000px;
+    }
+
+    .creators-wrapper .gallery-item {
+        width: 250px;
+        height: auto;
+        flex: none;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
     }
 }
 
-@media (max-width: 768px) {
+/* Специальные медиа-запросы для 375×812 */
+@media (max-width: 425px) {
+    /* Основные настройки */
+    html {
+        scroll-padding-top: 60px;
+    }
+    
+    body {
+        padding-top: 60px;
+    }
+    
+    /* Шапка */
+    header {
+        height: 60px;
+        padding: 0.5rem 0;
+    }
+    
+    .mobile-menu-btn {
+        font-size: 1.5rem;
+        top: 0.8rem;
+        left: 0.8rem;
+    }
+    
+    /* Герой-секция */
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        width: 90%;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .branch-info {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* Галерея */
+    .gallery-section {
+        margin: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .section-title::after {
+        bottom: -10px;
+        height: 2px;
+    }
+    
     .gallery {
         grid-template-columns: 1fr;
-    }	
-}
-#attractions-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    margin-top: 3rem;
-}
-
-#attractions-gallery {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    gap: 2rem !important;
-    flex-wrap: nowrap !important;
-    max-width: 1000px !important;
-    margin: 0 auto !important;
-}
-
-#attractions-gallery .gallery-item {
-    width: 250px !important;
-    height: auto !important;
-    flex: 0 0 auto !important;
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    box-shadow: none !important;
-}
-
-.attractions-wrapper .gallery-item {
-    width: 250px;
-    height: auto;
-    opacity: 1;
-    transform: none;
-    animation: none;
-}
-
-@media (max-width: 992px) {
+        gap: 1.5rem;
+    }
+    
+    .gallery-item {
+        height: 250px;
+    }
+    
+    /* Погода */
+    .weather-section {
+        margin: 2rem 0;
+    }
+    
+    .weather-card {
+        width: 90%;
+        padding: 1rem;
+    }
+    
+    .weather-icon {
+        font-size: 1.5rem;
+    }
+    
+    .temperature {
+        font-size: 1.5rem;
+    }
+    
+    /* Футер */
+    footer {
+        padding: 1.5rem 0;
+        margin-top: 2rem;
+    }
+    
+    .social-links {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .social-links a {
+        font-size: 1.3rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+    
+    /* Кнопка "Наверх" */
+    .back-to-top-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+    
+    /* Мобильное меню */
+    #nav-menu a {
+        font-size: 1.3rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Модальное окно */
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .modal-description {
+        font-size: 1rem;
+    }
+    
+    /* Специальные галереи */
+    #attractions-gallery {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+    }
+    
     #attractions-gallery .gallery-item {
-        flex: 0 0 calc(50% - 2rem);
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+    
+    .creators-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .creators-wrapper .gallery-item {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
-@media (max-width: 576px) {
-    #attractions-gallery .gallery-item {
-        flex: 0 0 100%;
+@media (max-height: 812px) and (max-width: 375px) {
+    /* Дополнительные настройки для точного соответствия 375×812 */
+    .hero {
+        padding: 1.5rem 0;
     }
-}
-.creators-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 3rem auto;
-    flex-wrap: nowrap;
-    max-width: 1000px;
-}
-
-.creators-wrapper .gallery-item {
-    width: 250px;
-    height: auto;
-    flex: none;
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-}
-
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .gallery-item {
+        height: 200px;
+    }
+    
+    .btn-group {
+        margin-bottom: 1.5rem;
+    }
 }
