@@ -612,7 +612,7 @@ footer {
 }
 
 /* Адаптивность */
-@media (max-width: 1280px) {
+@media (max-width: 992px) {
     h1 {
         font-size: 4rem;
     }
@@ -630,7 +630,7 @@ footer {
         box-shadow: none;
         height: 0;
         position: relative;
-        height: 10vh;
+		height: 10vh;
     }
 
     .logo {
@@ -769,7 +769,6 @@ footer {
         height: 40px;
         font-size: 1rem;
     }
-}
 
 [data-scroll] {
     opacity: 0;
@@ -796,7 +795,6 @@ footer {
     opacity: 1;
     transform: translateY(0) translateX(0) scale(1);
 }
-
 .particle {
     position: absolute;
     background-color: var(--primary);
@@ -815,7 +813,7 @@ footer {
     100% {
         transform: translateY(-200px) translateX(0);
     }
-}
+    }
 
 .gallery {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -833,48 +831,41 @@ footer {
         grid-template-columns: 1fr;
     }	
 }
+#attractions-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    margin-top: 3rem;
+}
 
-/* Галерея attractions */
 #attractions-gallery {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: flex-start !important;
-    align-items: stretch !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
     gap: 2rem !important;
     flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    padding: 1rem 0 !important;
-    scrollbar-width: thin !important;
-    scrollbar-color: var(--primary) rgba(0,0,0,0.1) !important;
-    width: 100% !important;
+    max-width: 1000px !important;
     margin: 0 auto !important;
-    -webkit-overflow-scrolling: touch !important;
-}
-
-#attractions-gallery::-webkit-scrollbar {
-    height: 6px !important;
-}
-
-#attractions-gallery::-webkit-scrollbar-thumb {
-    background-color: var(--primary) !important;
-    border-radius: 3px !important;
 }
 
 #attractions-gallery .gallery-item {
-    width: 280px !important;
-    height: 380px !important;
+    width: 250px !important;
+    height: auto !important;
     flex: 0 0 auto !important;
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
-    margin: 0 !important;
-    transition: transform 0.3s ease !important;
+    box-shadow: none !important;
 }
 
-#attractions-gallery .gallery-item:hover {
-    transform: translateY(-5px) scale(1.02) !important;
+.attractions-wrapper .gallery-item {
+    width: 250px;
+    height: auto;
+    opacity: 1;
+    transform: none;
+    animation: none;
 }
 
 @media (max-width: 992px) {
@@ -888,7 +879,6 @@ footer {
         flex: 0 0 100%;
     }
 }
-
 .creators-wrapper {
     display: flex;
     justify-content: center;
@@ -907,66 +897,4 @@ footer {
     animation: none !important;
 }
 
-/* Мобильное предупреждение */
-.mobile-warning {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    text-align: center;
-    color: var(--light);
-}
-
-.mobile-warning-content {
-    background: var(--dark);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 2px solid var(--primary);
-    max-width: 500px;
-    animation: modalContentAppear 0.7s cubic-bezier(0.2, 0.8, 0.4, 1) both;
-}
-
-.mobile-warning h2 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-}
-
-.mobile-warning p {
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-.mobile-warning-btn {
-    background: var(--primary);
-    color: var(--light);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.mobile-warning-btn:hover {
-    background: var(--secondary);
-    transform: translateY(-2px);
-}
-
-@media (max-width: 992px) {
-    .mobile-warning {
-        display: flex;
-    }
-    
-    /* Скрываем основной контент */
-    body > *:not(.mobile-warning) {
-        display: none !important;
-    }
 }
