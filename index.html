@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ШАФ | Город на СПМ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="ico.ico">
@@ -16,18 +16,18 @@
     
     <div class="container">
         <header id="main-header">
-            <div class="logo">ШАФ</div>
-            <nav>
-                <ul id="nav-menu">
+    <div class="logo">ШАФ</div>
+    <nav>
+        <ul id="nav-menu">
                     <li><a href="#home">Главная</a></li>
                     <li><a href="#attractions">Правительство</a></li>
                     <li><a href="#gallery">Галерея</a></li>
                 </ul>
-                <div class="mobile-menu-btn" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </header>
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</header>
         
         <main>
             <section class="hero" id="home" data-scroll="fadeIn">
@@ -44,14 +44,10 @@
                     <i class="fas fa-subway"></i> <span id="branch-number">Желтая Ветка: 2104</span>
                 </div>
             </section>
-            
+			
             <section class="gallery-section" id="attractions" data-scroll="fadeIn">
     <h2 class="section-title" data-scroll="fadeIn" data-scroll-delay="100">Правительство</h2>
-    <div class="attractions-container">
-        <div class="attractions-wrapper" id="attractions-gallery">
-            <!-- Элементы будут добавлены через JS -->
-        </div>
-    </div>
+    <div class="creators-wrapper" id="attractions-gallery"></div>
 </section>
 
             <section class="gallery-section" id="gallery" data-scroll="fadeIn">
@@ -96,16 +92,7 @@
     </div>
 
     <div class="notification" id="notification"></div>
-    
-    <div class="mobile-warning" id="mobile-warning">
-        <div class="mobile-warning-content">
-            <h2>Мобильная версия не поддерживается</h2>
-            <p>К сожалению, данный сайт оптимизирован только для просмотра на компьютерах. Зайдите на него с ПК.</p>
-            <p>Вы можете скопировать ссылку, чтобы отправить её в любой из мессенджеров чтобы зайти с ПК.</p>
-        </div>
-    </div>
-
-    <script src="js/particles.js"></script>
+	<script src="js/particles.js"></script>
     <script src="js/main.js"></script>
     <script src="js/gallery.js"></script>
 </body>
