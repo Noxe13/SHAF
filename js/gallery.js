@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'Именно с него, вы сможете попасть в наш город. (да у нас хайперлупа красивее портала)'
         },
         {
-            image: 'images/gallery/none.jpg',
-            title: '',
-            description: ''
+            image: 'images/gallery/image3.jpg',
+            title: 'Главный вид ШАФ',
+            description: 'Прекрасная сакура, прекрасный город, прекрасное все!'
         },
         {
             image: 'images/gallery/none.jpg',
